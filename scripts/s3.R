@@ -145,7 +145,7 @@ slid_nowna <- filter(slid, !is.na(wages))
 summary(slid_nowna)
 
 # Pitfalls: Beware of doing operations with NA values.
-na_df = data.frame(x = 1:3, y = c(NA, 2, NA))
+na_df <- data.frame(x = 1:3, y = c(NA, 2, NA))
 mutate(na_df, z = x + y)
 
 # NA Pitfalls with summary statistics and NA values
