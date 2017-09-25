@@ -55,24 +55,18 @@ gdp_close <- gap %>%
 # Note %$% which allows us to pipe the 'environment' so we can just type in
 # variable names withot storing this temporary dataset into a variable, for
 # example var and then using var$year and var$lifeExp
-# NOTE for later: there is something very inefficient in this code...
+# NOTE for later: there are inefficiencies in this code...
 # perhaps there is a way to make this cleaner?
-# par(new = TRUE) allows us to 'stack' on to the current graph instead of
-# creating a new one.
 gap %>% filter(country %in% gdp_close[[1]]) %$%
   plot(year, lifeExp, 'l', col = 'red', ylim = c(65, 90))
-par(new = TRUE)
 gap %>% filter(country %in% gdp_close[[2]]) %$%
-  plot(year, lifeExp, 'l', col = 'blue', ylim = c(65, 90))
-par(new = TRUE)
+  lines(year, lifeExp, 'l', col = 'blue', ylim = c(65, 90))
 gap %>% filter(country %in% gdp_close[[3]]) %$%
-  plot(year, lifeExp, 'l', col = 'green', ylim = c(65, 90))
-par(new = TRUE)
+  lines(year, lifeExp, 'l', col = 'green', ylim = c(65, 90))
 gap %>% filter(country %in% gdp_close[[4]]) %$%
-  plot(year, lifeExp, 'l', col = 'gray', ylim = c(65, 90))
-par(new = TRUE)
+  lines(year, lifeExp, 'l', col = 'gray', ylim = c(65, 90))
 gap %>% filter(country %in% gdp_close[[5]]) %$%
-  plot(year, lifeExp, 'l', col = 'black', ylim = c(65, 90))
+  lines(year, lifeExp, 'l', col = 'black', ylim = c(65, 90))
 legend('topleft', legend = gdp_close,
        pch = 19,
        pt.cex = 1,
