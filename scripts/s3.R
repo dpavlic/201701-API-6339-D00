@@ -57,15 +57,15 @@ gdp_close <- gap %>%
 # example var and then using var$year and var$lifeExp
 # NOTE for later: there are inefficiencies in this code...
 # perhaps there is a way to make this cleaner?
-gap %>% filter(country %in% gdp_close[[1]]) %$%
+gap %>% filter(country == gdp_close[[1]]) %$%
   plot(year, lifeExp, 'l', col = 'red', ylim = c(65, 90))
-gap %>% filter(country %in% gdp_close[[2]]) %$%
+gap %>% filter(country == gdp_close[[2]]) %$%
   lines(year, lifeExp, 'l', col = 'blue', ylim = c(65, 90))
-gap %>% filter(country %in% gdp_close[[3]]) %$%
+gap %>% filter(country == gdp_close[[3]]) %$%
   lines(year, lifeExp, 'l', col = 'green', ylim = c(65, 90))
-gap %>% filter(country %in% gdp_close[[4]]) %$%
+gap %>% filter(country == gdp_close[[4]]) %$%
   lines(year, lifeExp, 'l', col = 'gray', ylim = c(65, 90))
-gap %>% filter(country %in% gdp_close[[5]]) %$%
+gap %>% filter(country == gdp_close[[5]]) %$%
   lines(year, lifeExp, 'l', col = 'black', ylim = c(65, 90))
 legend('topleft', legend = gdp_close,
        pch = 19,
